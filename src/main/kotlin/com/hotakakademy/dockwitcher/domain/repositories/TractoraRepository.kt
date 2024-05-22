@@ -8,11 +8,15 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class TractoraRepository(
-        @Qualifier("mongoMasterTemplate")
-        mongoTemplate: MongoTemplate)
+    @Qualifier("mongoMasterTemplate")
+    mongoTemplate: MongoTemplate)
     : AbstractMongoRepository<Tractora>(mongoTemplate, Tractora::class.java), ITractoraRepository {
+
+    override fun save(entity: Tractora) {
+        mongoTemplate.save(entity)
+    }
+
     override fun findAll(): List<Tractora> {
-        val list = mongoTemplate.findAll(Tractora::class.java)
-        return list
+        return mongoTemplate.findAll(Tractora::class.java)
     }
 }
