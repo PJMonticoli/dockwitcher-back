@@ -8,24 +8,63 @@
         function cancelarRegistro() {
             window.location.href = "/tractoras";
         }
+        function validarFormulario() {
+            var matricula = document.getElementById("matricula");
+            var marca = document.getElementById("marca");
+            var pma = document.getElementById("pma");
+            var conductor = document.getElementById("conductor");
+
+            if (matricula.value.trim() === '') {
+                matricula.classList.add('is-invalid');
+            } else {
+                matricula.classList.remove('is-invalid');
+            }
+
+            if (marca.value.trim() === '') {
+                marca.classList.add('is-invalid');
+            } else {
+                marca.classList.remove('is-invalid');
+            }
+
+            if (pma.value.trim() === '') {
+                pma.classList.add('is-invalid');
+            } else {
+                pma.classList.remove('is-invalid');
+            }
+
+            if (conductor.value.trim() === '') {
+                conductor.classList.add('is-invalid');
+            } else {
+                conductor.classList.remove('is-invalid');
+            }
+
+            if (matricula.value.trim() === '' || marca.value.trim() === '' || pma.value.trim() === '' || conductor.value.trim() === '') {
+                alert('Por favor complete todos los campos');
+                return false;
+            }
+
+            return true;
+        }
     </script>
 </head>
 <body>
 
 <div class="container py-3">
     <h1 class="text-uppercase py-3 text-center">Registro de Tractora</h1>
-    <form action="/tractoras/registrar" method="post">
+    <form action="/tractoras/registrar" method="post" onsubmit="return validarFormulario()">
         <div class="row">
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="matricula" class="form-label">Matrícula</label>
                     <input type="text" class="form-control" id="matricula" name="matricula">
+                    <div class="invalid-feedback">Matrícula es requerida.</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="marca" class="form-label">Marca</label>
                     <input type="text" class="form-control" id="marca" name="marca">
+                    <div class="invalid-feedback">Marca es requerida.</div>
                 </div>
             </div>
         </div>
@@ -36,18 +75,23 @@
                 <div class="mb-3">
                     <label for="pma" class="form-label">PMA</label>
                     <input type="text" class="form-control" id="pma" name="pma">
+                    <div class="invalid-feedback">PMA es requerido.</div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="conductor" class="form-label">Conductor</label>
                     <input type="text" class="form-control" id="conductor" name="conductor">
+                    <div class="invalid-feedback">Conductor es requerido.</div>
                 </div>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-outline-primary">Registrar</button>
-        <button type="button" class="btn btn-outline-danger" onclick="cancelarRegistro()">Cancelar</button>    </form>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-2">
+            <button type="submit" class="btn btn-outline-primary">Registrar</button>
+            <button type="button" class="btn btn-outline-danger" onclick="cancelarRegistro()">Cancelar</button>
+        </div>
+    </form>
 </div>
 
 </body>
