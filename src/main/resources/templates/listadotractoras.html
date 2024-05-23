@@ -10,8 +10,47 @@
             window.location.href = "/tractoras/registrar";
         }
     </script>
+    <script>
+        function registrarTractora() {
+            window.location.href = "/tractoras/registrar";
+        }
+    </script>
+    <script>
+        function listadoTractoras() {
+            window.location.href = "/tractoras";
+        }
+    </script>
+    <script>
+        function home() {
+            window.location.href = "/";
+        }
+    </script>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#" onclick="home()">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tractoras
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="listadoTractoras()">Listado</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="registrarTractora()">Registrar Tractora</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="container">
     <h1 class="text-uppercase py-3 text-center">Listado de Tractoras</h1>
     <button class="btn btn-primary" onclick="registrarTractora()"> + Registrar</button>
