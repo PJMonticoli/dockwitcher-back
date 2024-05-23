@@ -23,7 +23,7 @@ class TractorasController (
     @GetMapping("/tractoras/registrar")
     fun mostrarFormularioRegistro(model: Model): String {
         model.addAttribute("tractora", Tractora())
-        return "registrar"
+        return "registrartractora"
     }
 
     @PostMapping("/tractoras/registrar")

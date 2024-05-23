@@ -1,13 +1,11 @@
 package com.hotakakademy.dockwitcher.controllers
 
 import com.hotakakademy.dockwitcher.domain.entities.Conductor
-import com.hotakakademy.dockwitcher.domain.repositories.ITractoraRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
-import com.hotakakademy.dockwitcher.domain.entities.Tractora
 import com.hotakakademy.dockwitcher.domain.repositories.IConductorRepository
 
 @Controller
@@ -16,16 +14,30 @@ class ConductoresController (
 ) {
 
     @GetMapping("/conductores")
-    fun listadoConductores(model: Model
+    fun listado(model: Model
     ): String {
-        val conductores = repository.findAll()
-        model.addAttribute("conductores", conductores)
+        val tractoras = repository.findAll()
+        model.addAttribute("items", tractoras)
         return "listadoconductores"
     }
 
-    @PostMapping("/conductores/registrar")
-    fun crearConductor(@ModelAttribute conductor: Conductor): String {
-        repository.save(conductor)
-        return "redirect:/conductor"
+    @GetMapping("/conductores/registrar")
+    fun nuevo(model: Model
+    ): String {
+        return "registrarconductor"
     }
+
+
+   // @PostMapping("/conductores/registrar")
+   // fun create(@ModelAttribute conductorDto: ConductorDto
+   // ): String {
+   //     val conductor = Conductor()
+    //    conductor.nombre = conductorDto.nombre
+      //  conductor.email = conductorDto.email
+       // conductor.licencia = conductorDto.licencia
+        //conductor.telefono = conductorDto.telefono
+        //repository.save(conductor)
+        //return "listadoconductores"
+    //}
+
 }
