@@ -15,6 +15,20 @@
             window.location.href = "/tractoras";
         }
     </script>
+
+
+    <script>
+        function registrarConductor() {
+            window.location.href = "/conductores/registrar";
+        }
+    </script>
+
+    <script>
+        function listadoConductores() {
+            window.location.href = "/conductores";
+        }
+    </script>
+
     <script>
         function home() {
             window.location.href = "/";
@@ -24,7 +38,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Dockwitcher</a>
+        <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,8 +56,19 @@
                         <li><a class="dropdown-item" href="#" onclick="registrarTractora()">Registrar Tractora</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Conductores
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" onclick="listadoTractores()">Listado</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="registrarConductor()">Registrar Conductor</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
+
     </div>
 </nav>
     <h1 class="text-center mt-2 text-uppercase">Dockwitcher</h1>
