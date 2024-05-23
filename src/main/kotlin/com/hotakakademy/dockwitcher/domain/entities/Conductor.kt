@@ -2,8 +2,9 @@ package com.hotakakademy.dockwitcher.domain.entities
 
 import com.hotakademy.dockwitcher.domain.entities.Entity
 import com.hotakakademy.dockwitcher.domain.repositories.IConductorRepository
+import org.springframework.data.mongodb.core.mapping.Document
 import java.util.Date
-
+@Document(collection = "conductores")
 class Conductor : Entity<IConductorRepository>(){
     var nombre: String? = null
     var indentificacion: String? = null

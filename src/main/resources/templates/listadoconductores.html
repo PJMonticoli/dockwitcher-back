@@ -78,23 +78,22 @@
         <thead class="table-dark">
         <tr>
             <td>nombre</td>
-            <td>licencia</td>
-            <td>fechaCaducidad</td>
-            <td>telefono</td>
             <td>email</td>
+            <td>licencia</td>
+            <td>telefono</td>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="item: ${item}">
-            <td th:text="${item.nombre}"></td>
-            <td th:text="${item.licencia}"></td>
-            <td th:text="${item.fechaCaducidad}"></td>
-            <td th:text="${item.telefono}"></td>
-            <td th:text="${item.email}"></td>
+        <tr th:each="conductor: ${conductores}">
+            <td th:text="${conductor.nombre}"></td>
+            <td th:text="${conductor.email}"></td>
+            <td th:text="${conductor.licencia}"></td>
+            <td th:text="${conductor.telefono}"></td>
         </tr>
         </tbody>
     </table>
 </div>
+
 
 </body>
 </html>
