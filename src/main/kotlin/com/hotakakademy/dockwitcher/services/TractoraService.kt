@@ -13,7 +13,7 @@ class TractoraService(
     fun createTractora(tractoraDto: TractoraDto): Tractora {
         val tractora = Tractora().apply {
             matricula = tractoraDto.matricula
-            modelo.marca = tractoraDto.modelo
+            modelo.marca = tractoraDto.marca
             caracteristicas.carga.pma = tractoraDto.pma
             conductor = tractoraDto.nombre
         }
