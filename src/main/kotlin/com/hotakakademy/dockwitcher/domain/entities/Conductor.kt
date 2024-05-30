@@ -7,14 +7,16 @@ import java.util.Date
 @Document(collection = "conductores")
 class Conductor : Entity<IConductorRepository>(){
     var nombre: String? = null
-    var indentificacion: String? = null
     var licencia: String? = null
-    var fechaCaducidad: Date? = null
     var telefono: String? = null
     var email: String? = null
+
+    // DEJO COMENTADO PORQUE NO ME PERMITE HACER UN REGISTRO CORRECTAMENTE
+    /*var indentificacion: String? = null
+    var fechaCaducidad: Date? = null
     var formaciones: List<String> = mutableListOf()
     var observaciones: String? = null
     val experiencia: Experiencia = Experiencia()
     val disponibilidad: Disponibilidad = Disponibilidad()
-    val historial: List<Incidentes> = mutableListOf()
+    val historial: List<Incidentes> = mutableListOf() */
 }
