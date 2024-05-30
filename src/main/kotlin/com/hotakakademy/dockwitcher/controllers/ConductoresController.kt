@@ -32,9 +32,7 @@ class ConductoresController (
             conductorService.createConductor(conductorDto)
             "redirect:/conductores"
         } catch (e: Exception) {
-            // Log the exception for debugging purposes
             println("Error: ${e.message}")
-            e.printStackTrace()
             "error"
         }
     }
