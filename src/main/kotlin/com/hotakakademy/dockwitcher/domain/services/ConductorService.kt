@@ -4,7 +4,25 @@ import com.hotakakademy.dockwitcher.domain.factories.IConductorFactory
 import org.springframework.stereotype.Service
 import com.hotakakademy.dockwitcher.domain.repositories.IConductorRepository
 import com.hotakakademy.dockwitcher.domain.entities.Conductor
+
+
+@Service
+class ConductorService (
+    private val conductorFactory: IConductorFactory,private val repository: IConductorRepository
+) : IConductorService {
+    override fun create(conductorDto: ConductorDto) {
+        val conductor = conductorFactory.createFromDto(conductorDto)
+        conductor.save()
+    }
+    fun findAll(): List<Conductor> {
+        return repository.findAll()
+    }
+}
+
+
 /*
+
+CODIGO VIEJO
 @Service
 class ConductorService(private val repository: IConductorRepository) {
 
@@ -25,16 +43,3 @@ class ConductorService(private val repository: IConductorRepository) {
 }
 
  */
-
-@Service
-class ConductorService (
-    private val conductorFactory: IConductorFactory,private val repository: IConductorRepository
-) : IConductorService {
-    override fun create(conductorDto: ConductorDto) {
-        val conductor = conductorFactory.createFromDto(conductorDto)
-        conductor.save()
-    }
-    fun findAll(): List<Conductor> {
-        return repository.findAll()
-    }
-}

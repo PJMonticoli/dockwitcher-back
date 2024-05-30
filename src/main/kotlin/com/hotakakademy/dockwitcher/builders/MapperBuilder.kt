@@ -6,6 +6,7 @@ import org.modelmapper.config.Configuration
 import org.modelmapper.convention.MatchingStrategies
 import org.springframework.stereotype.Component
 
+// Tuve que agregar selector component para que funcione mi modelmapper
 @Component
 class MapperBuilder {
     fun build(): ModelMapper {
