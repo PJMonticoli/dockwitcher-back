@@ -1,4 +1,4 @@
-package com.hotakakademy.dockwitcher.services
+package com.hotakakademy.dockwitcher.domain.services
 
 import com.hotakakademy.dockwitcher.DTO.TractoraDto
 import com.hotakakademy.dockwitcher.domain.entities.Tractora

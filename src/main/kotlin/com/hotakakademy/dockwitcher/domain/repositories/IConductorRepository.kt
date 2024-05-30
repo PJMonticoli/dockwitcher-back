@@ -5,6 +5,6 @@ import com.hotakakademy.dockwitcher.domain.entities.Conductor
 
 
 
-interface IConductorRepository : IMongoRepository<Conductor>{
+interface IConductorRepository : IMongoRepository<Conductor> {
     fun findAll(): List<Conductor>
 }

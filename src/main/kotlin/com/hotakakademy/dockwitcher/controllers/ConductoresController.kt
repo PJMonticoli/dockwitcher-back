@@ -1,22 +1,22 @@
 package com.hotakakademy.dockwitcher.controllers
 import com.hotakakademy.dockwitcher.DTO.ConductorDto
+import com.hotakakademy.dockwitcher.domain.repositories.IConductorRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
-import com.hotakakademy.dockwitcher.services.ConductorService
+
+import com.hotakakademy.dockwitcher.domain.services.IConductorService
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 @Controller
 class ConductoresController (
-    private val conductorService: ConductorService
+    private val repository: IConductorRepository,
+    private val conductorService: IConductorService
 ) {
 
-    // Creo un service para mantener el patron de diseño
-    // En el controller manejo las peticiones HTTP(GET,POST,PUT,ETC)
-    // En el service tengo la logica de negocio
     @GetMapping("/conductores")
     fun listado(model: Model): String {
-        val conductores = conductorService.findAll()
+        val conductores = repository.findAll()
         model.addAttribute("conductores", conductores)
         return "listadoconductores"
     }
@@ -26,7 +26,21 @@ class ConductoresController (
         return "registrarconductor"
     }
 
+
     @PostMapping("/conductores/registrar")
+    fun create(@ModelAttribute conductorDto: ConductorDto
+    ): String {
+        return try {
+            conductorService.create(conductorDto)
+            "redirect:/conductores"
+        } catch (e: Exception) {
+            println("Error: ${e.message}")
+            "error"
+        }
+    }
+
+}
+ /*   @PostMapping("/conductores/registrar")
     fun create(@ModelAttribute conductorDto: ConductorDto): String {
         return try {
             conductorService.createConductor(conductorDto)
@@ -37,4 +51,7 @@ class ConductoresController (
         }
     }
 
-}
+  */
+
+
+

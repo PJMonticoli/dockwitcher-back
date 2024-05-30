@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 import com.hotakakademy.dockwitcher.domain.entities.Tractora
-import com.hotakakademy.dockwitcher.services.TractoraService
+import com.hotakakademy.dockwitcher.domain.services.TractoraService
 
 @Controller
 class TractorasController (    private val tractoraService: TractoraService

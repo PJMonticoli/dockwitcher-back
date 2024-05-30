@@ -11,12 +11,8 @@ class ConductorRepository(
     @Qualifier("mongoMasterTemplate")
     mongoTemplate: MongoTemplate)
     : AbstractMongoRepository<Conductor>(mongoTemplate, Conductor::class.java), IConductorRepository {
-
-    override fun save(entity: Conductor) {
-        mongoTemplate.save(entity)
-    }
-
     override fun findAll(): List<Conductor> {
-        return mongoTemplate.findAll(Conductor::class.java)
+        val list = mongoTemplate.findAll(Conductor::class.java)
+        return list
     }
 }
