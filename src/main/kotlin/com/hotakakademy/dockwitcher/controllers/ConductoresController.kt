@@ -40,18 +40,7 @@ class ConductoresController (
     }
 
 }
- /*   @PostMapping("/conductores/registrar")
-    fun create(@ModelAttribute conductorDto: ConductorDto): String {
-        return try {
-            conductorService.createConductor(conductorDto)
-            "redirect:/conductores"
-        } catch (e: Exception) {
-            println("Error: ${e.message}")
-            "error"
-        }
-    }
 
-  */
 
 
 
