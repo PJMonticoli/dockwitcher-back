@@ -28,7 +28,7 @@ class TractorasController (    private val tractoraService: TractoraService
 
     @PostMapping("/tractoras/registrar")
     fun crearTractora(@ModelAttribute tractoraDto: TractoraDto): String {
-        tractoraService.createTractora(tractoraDto)
+        tractoraService.create(tractoraDto)
         return "redirect:/tractoras"
     }
 

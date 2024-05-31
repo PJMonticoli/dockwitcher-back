@@ -6,6 +6,7 @@ import com.hotakakademy.dockwitcher.domain.repositories.IConductorRepository
 import org.modelmapper.ModelMapper
 import org.springframework.stereotype.Component
 
+// Aca le tuve que agregar el @Component al factory para que funcione el Bean
 @Component
 class ConductorFactory(
     private val repository: IConductorRepository,
