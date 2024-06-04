@@ -9,5 +9,5 @@ class TractoraDto
     var matricula: String?=null
     var marca: String?=null
     var pma: Int?=null
-    var nombre: Conductor?=null
+    var nombre: String?=null
 }

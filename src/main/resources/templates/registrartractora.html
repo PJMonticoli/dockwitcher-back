@@ -21,7 +21,7 @@
             var matricula = document.getElementById("matricula");
             var marca = document.getElementById("marca");
             var pma = document.getElementById("pma");
-            var conductor = document.getElementById("conductor");
+            var nombre = document.getElementById("nombre");
 
             if (matricula.value.trim() === '') {
                 matricula.classList.add('is-invalid');
@@ -41,13 +41,13 @@
                 pma.classList.remove('is-invalid');
             }
 
-            if (conductor.value.trim() === '') {
-                conductor.classList.add('is-invalid');
+            if (nombre.value.trim() === '') {
+                nombre.classList.add('is-invalid');
             } else {
-                conductor.classList.remove('is-invalid');
+                nombre.classList.remove('is-invalid');
             }
 
-            if (matricula.value.trim() === '' || marca.value.trim() === '' || pma.value.trim() === '' || conductor.value.trim() === '') {
+            if (matricula.value.trim() === '' || marca.value.trim() === '' || pma.value.trim() === '' || nombre.value.trim() === '') {
                 alert('Por favor complete todos los campos');
                 return false;
             }
@@ -152,8 +152,8 @@
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="conductor" class="form-label fw-semibold">Conductor</label>
-                    <input type="text" class="form-control" id="conductor" name="conductor">
+                    <label for="nombre" class="form-label fw-semibold">Conductor</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
                     <div class="invalid-feedback">Conductor es requerido.</div>
                 </div>
             </div>
