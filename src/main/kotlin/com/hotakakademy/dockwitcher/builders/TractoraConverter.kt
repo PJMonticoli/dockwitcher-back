@@ -6,8 +6,12 @@ import com.hotakakademy.dockwitcher.domain.entities.Tractora
 import org.modelmapper.Converter
 import org.modelmapper.spi.MappingContext
 
+
+//  "Converter" es una interfaz de ModelMapper
 class TractoraConverter : Converter<TractoraDto, Tractora> {
+    // tractoraDto es el origen y Tractora destino
     override fun convert(mappingContext: MappingContext<TractoraDto, Tractora>): Tractora {
+        // MappingContext tiene el objeto de origen (TractoraDto) y devuelve el objeto de destino (Tractora)
         val tractoraDto = mappingContext.source
         val tractora = Tractora()
 
