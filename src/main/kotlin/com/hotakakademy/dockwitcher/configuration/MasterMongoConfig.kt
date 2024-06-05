@@ -12,8 +12,14 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.data.mongodb.core.MongoTemplate
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 
-
+// @Configuration: Indica que esta clase es una clase de configuración de Spring.
 @Configuration
+
+// @EnableMongoRepositories: Habilita la creación de repositorios de MongoDB en el
+// paquete especificado y configura el mongoTemplateRef para que use mongoMasterTemplate
+
+// @Bean objeto administrado por el contenedor de Spring,facilita la inyección de dependencias y la gestión de los objetos en la aplicación
+
 @EnableMongoRepositories(basePackages = ["com.hotakakademy.dockwitcher.domain.repositories"], mongoTemplateRef = "mongoMasterTemplate")
 class MasterMongoConfig {
     @Value("\${mongodb.core.database}")

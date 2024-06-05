@@ -7,6 +7,10 @@ import org.modelmapper.ModelMapper
 import org.springframework.stereotype.Component
 
 // Aca le tuve que agregar el @Component al factory para que funcione el Bean
+
+// Los patrones de diseño Factory son utilizados para encapsular la creación de objetos,
+// proporcionando una abstracción sobre el proceso de creación y permitiendo una mayor
+// flexibilidad, extensibilidad y mantenibilidad del código
 @Component
 class ConductorFactory(
     private val repository: IConductorRepository,
