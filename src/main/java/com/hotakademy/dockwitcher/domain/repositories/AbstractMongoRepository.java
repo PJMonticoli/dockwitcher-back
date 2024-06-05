@@ -9,6 +9,13 @@ import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.Optional;
 
+/**
+ * AbstractMongoRepository es una clase abstracta que implementa la interfaz IMongoRepository
+ * y proporciona una implementación base para operaciones CRUD con MongoDB utilizando MongoTemplate.
+ *
+ * @param <TEntity> el tipo de entidad que este repositorio manejará, debe extender de Entity.
+ */
+
 public class AbstractMongoRepository<TEntity extends Entity> implements IMongoRepository<TEntity> {
 
     protected MongoTemplate mongoTemplate;

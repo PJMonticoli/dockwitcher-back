@@ -18,6 +18,7 @@ class TractoraConverter : Converter<TractoraDto, Tractora> {
         tractora.matricula = tractoraDto.matricula
         tractora.modelo.marca = tractoraDto.marca
         tractora.caracteristicas.carga.pma = tractoraDto.pma?: 0
+        // apply lo utilizo para crear y configurar el objeto Conductor
         tractora.conductor = Conductor().apply { nombre = tractoraDto.nombre }
 
         return tractora

@@ -29,8 +29,13 @@ class TractorasController (    private val tractoraService: TractoraService
 
     @PostMapping("/tractoras/registrar")
     fun crearTractora(@ModelAttribute tractoraDto: TractoraDto): String {
-        tractoraService.create(tractoraDto)
-        return "redirect:/tractoras"
+        return try {
+            tractoraService.create(tractoraDto)
+            "redirect:/tractoras"
+        } catch (e: Exception) {
+            println("Error al crear la tractora: ${e.message}")
+            "error"
+        }
     }
 
 }

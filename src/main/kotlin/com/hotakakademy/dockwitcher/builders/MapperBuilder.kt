@@ -28,7 +28,7 @@ class MapperBuilder {
             }
             applicationContext.source!!.toHexString()
         })
-        
+
         modelMapper.addConverter(TractoraConverter())
 
         return modelMapper
