@@ -14,6 +14,27 @@
             margin: 0;
         }
 
+
+        .features {
+          padding: 60px 0;
+          text-align: center;
+        }
+
+        .features .section-title {
+          margin-bottom: 50px;
+        }
+
+        .feature {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 40px;
+        }
+
+        .feature .icon {
+          font-size: 36px;
+          margin-bottom: 20px;
+        }
     </style>
     <script>
         function registrarTractora() {
@@ -82,7 +103,38 @@
 
     </div>
 </nav>
-    <h1 class="text-center mt-2 text-uppercase fw-semibold">Dockwitcher</h1>
+    <h1 class="text-center mt-2 text-uppercase fw-semibold py-3">Dockwitcher</h1>
+<section class="features" id="features">
+    <div class="container py-5">
+        <div class="feature">
+            <div class="icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="text">
+                <h3>Comunicación Eficiente</h3>
+                <p>Facilita la comunicación entre todas las partes involucradas en el proceso logístico, desde la asignación de muelles hasta las actualizaciones de horarios.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <div class="text">
+                <h3>Gestión de Tiempo Precisa</h3>
+                <p>Permite la programación detallada de horarios de llegada y salida, optimizando el uso de los recursos y minimizando los tiempos de espera.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="text">
+                <h3>Seguridad y Control</h3>
+                <p>Implementa medidas de seguridad robustas para proteger la información sensible y ofrece diferentes niveles de acceso para garantizar la privacidad de los datos.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
