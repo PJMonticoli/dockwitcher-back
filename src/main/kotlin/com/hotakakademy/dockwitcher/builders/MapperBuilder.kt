@@ -6,7 +6,7 @@ import org.modelmapper.config.Configuration
 import org.modelmapper.convention.MatchingStrategies
 import org.springframework.stereotype.Component
 
-// Tuve que agregar selector component para que funcione mi modelmapper
+// Agregue @Component para indicarle al contenedor de Spring que debe administrar esta clase como un bean
 @Component
 class MapperBuilder {
     fun build(): ModelMapper {
