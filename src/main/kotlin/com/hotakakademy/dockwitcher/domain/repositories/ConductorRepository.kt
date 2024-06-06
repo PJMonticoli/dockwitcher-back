@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.data.mongodb.core.MongoTemplate
 import org.springframework.stereotype.Repository
 
-// @Repository Especialización de @Component para la capa de persistencia
-// Se encarga de gestionar la interacción entre la aplicación y la base de datos
-// permitiendo separar la lógica de acceso a datos de la lógica de negocio
+/* @Repository  para la capa de persistencia
+Se encarga de gestionar la interacción entre la aplicación y la base de datos
+permitiendo separar la lógica de acceso a datos de la lógica de negocio
+ */
 @Repository
 class ConductorRepository(
     @Qualifier("mongoMasterTemplate")

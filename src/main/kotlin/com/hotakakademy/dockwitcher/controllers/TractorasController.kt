@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import com.hotakakademy.dockwitcher.domain.entities.Tractora
 import com.hotakakademy.dockwitcher.domain.services.TractoraService
 
-
+// @Controller para indicarle al contenedor de Spring que debe administrar esta clase como un bean
 @Controller
 class TractorasController (    private val tractoraService: TractoraService
 ) {

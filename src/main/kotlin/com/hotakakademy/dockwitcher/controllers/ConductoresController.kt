@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping
 import com.hotakakademy.dockwitcher.domain.services.IConductorService
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
+
+// @Controller para indicarle al contenedor de Spring que debe administrar esta clase como un bean
 @Controller
 class ConductoresController (
     private val repository: IConductorRepository,
