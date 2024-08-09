@@ -6,16 +6,14 @@ import com.hotakakademy.dockwitcher.domain.repositories.IConductorRepository
 import com.hotakakademy.dockwitcher.domain.entities.Conductor
 
 
+
 @Service
 class ConductorService (
-    private val conductorFactory: IConductorFactory,private val repository: IConductorRepository
+    private val conductorFactory: IConductorFactory,
 ) : IConductorService {
     override fun create(conductorDto: ConductorDto) {
         val conductor = conductorFactory.createFromDto(conductorDto)
         conductor.save()
-    }
-    fun findAll(): List<Conductor> {
-        return repository.findAll()
     }
 }
 
