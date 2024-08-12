@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.data.domain.Sort
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.RequestBody
+
 // @Controller para indicarle al contenedor de Spring que debe administrar esta clase como un bean
 @RestController
 class ConductoresController (
@@ -36,16 +40,16 @@ class ConductoresController (
 
 
     @PostMapping("/conductores/registrar")
-    fun create(@ModelAttribute conductorDto: ConductorDto
-    ): String {
+    fun create(@RequestBody conductorDto: ConductorDto): ResponseEntity<String> {
         return try {
             conductorService.create(conductorDto)
-            "redirect:/conductores"
+            ResponseEntity.ok("Conductor registrado")
         } catch (e: Exception) {
             println("Error: ${e.message}")
-            "error"
+            ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al registrar el conductor")
         }
     }
+
 
 }
 

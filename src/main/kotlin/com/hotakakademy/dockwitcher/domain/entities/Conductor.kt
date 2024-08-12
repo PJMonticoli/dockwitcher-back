@@ -10,7 +10,7 @@ class Conductor : Entity<IConductorRepository>(){
     var licencia: String? = null
     var telefono: String? = null
     var email: String? = null
-    var indentificacion: String? = null
+    var identificacion: String? = null
     var fechaCaducidad: Date? = null
     var formaciones: List<String> = mutableListOf()
     var observaciones: String? = null

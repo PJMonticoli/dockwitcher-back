@@ -5,7 +5,7 @@ import com.hotakakademy.dockwitcher.domain.repositories.ITractoraRepository
 import org.modelmapper.ModelMapper
 import org.springframework.stereotype.Component
 
-
+@Component
 class TractoraFactory(
     private val repository: ITractoraRepository,
     private val modelMapper: ModelMapper
