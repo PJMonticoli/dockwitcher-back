@@ -24,13 +24,19 @@ class ConductoresController (
     private val conductorService: IConductorService
 ) {
     @GetMapping("/conductores")
-    fun listado(@RequestParam(defaultValue = "0") page: Int,
-                @RequestParam(defaultValue = "10") size: Int,
-                @RequestParam(defaultValue = "date") sort: String,
-                @RequestParam(defaultValue = "desc") direction: String
-    ): Page<Conductor>{
+    fun listado(
+        @RequestParam(defaultValue = "0") page: Int,
+        @RequestParam(defaultValue = "10") size: Int,
+        @RequestParam(defaultValue = "nombre") sort: String,
+        @RequestParam(defaultValue = "asc") direction: String,
+        @RequestParam(required = false) search: String?
+    ): Page<Conductor> {
         val paging = PageRequest.of(page, size, Sort.by(Sort.Direction.fromString(direction), sort))
-        return repository.findAll(paging)
+        return if (search.isNullOrBlank()) {
+            repository.findAll(paging)
+        } else {
+            repository.findByNombre(search, paging)
+        }
     }
 
     @GetMapping("/conductores/registrar")
@@ -52,7 +58,6 @@ class ConductoresController (
 
 
 }
-
 
 
 

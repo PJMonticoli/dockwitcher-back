@@ -7,5 +7,5 @@ class ConductorDto {
     var licencia: String? = null
     var identificacion: String? = null
     var telefono: String? = null
-    var fechaCaducidad : Date? =null
+    var fechaCaducidad: Date? = null
 }
